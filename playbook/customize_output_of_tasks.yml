@@ -1,0 +1,20 @@
+---
+- hosts: test
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: root
+  tasks:
+    - name: check server verison
+      shell: cat /etc/debian_version
+      register: version
+
+    - name: check network speed
+      shell: ping -c 4 google.com
+      register: speed
+
+    - name: output version
+      debug: msg="Version on server {{ version.stdout_lines }}"
+
+    - name: output ping
+      debug: var=speed.stdout_lines
