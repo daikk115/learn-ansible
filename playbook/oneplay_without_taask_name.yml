@@ -1,0 +1,9 @@
+---
+- hosts: test
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: root
+  tasks:
+    apt: name=apache2 state=latest
+    service: name=apache2 state=started enabled=yes
