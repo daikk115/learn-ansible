@@ -1,0 +1,8 @@
+## ansible-playbook other_include.yml -i ../hosts
+---
+- hosts: test
+  become_user: root
+  become: yes
+  tasks:
+    - include: other_pip2.yml
+    - include: other_pip3.yml

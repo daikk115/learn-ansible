@@ -1,0 +1,5 @@
+---
+- hosts: test
+  tasks:
+   - name: Install PIP2
+     apt: pkg=python-pip state=installed update_cache=true
