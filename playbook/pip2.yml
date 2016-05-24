@@ -1,5 +1,7 @@
 ---
 - hosts: test
+  remote_user: root
+  become: True
   tasks:
    - name: Install Python-Pip
      apt: pkg=python-pip state=installed update_cache=true
