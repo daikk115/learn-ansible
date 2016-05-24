@@ -1,0 +1,4 @@
+## ansible-playbook -b include.yml -i hosts
+---
+- include: pip2.yml
+- include: pip3.yml
